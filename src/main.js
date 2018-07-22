@@ -1,8 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import wrap from '@vue/web-component-wrapper'
+import PuzzleButton from './components/PuzzleButton.vue?shadow'
 
-Vue.config.productionTip = false
-
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+window.customElements.define('puzzle-button', wrap(Vue, PuzzleButton));
